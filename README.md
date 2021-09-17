@@ -1,1 +1,1 @@
-# Conversor_String_Decimal
+# Conversor_String_Binário
