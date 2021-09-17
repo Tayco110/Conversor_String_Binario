@@ -12,11 +12,12 @@ class Cliente {
 
         do {
             do{
-                System.out.println("DIGITE O VALOR QUE CORRESPONDE À TAREFA QUE DESEJA REALIZAR:");
-                System.out.println("    (1) CONVERTER UMA STRING PARA BINÁRIO");
-                System.out.println("    (2) CONVERTER UM BINÁRIO PARA STRING");
-                System.out.println("    (3) SAIR DA APLICAÇÃO");
-                System.out.print("ENTRADA: ");
+                System.out.println("******************************************************************");
+                System.out.println("** DIGITE O VALOR QUE CORRESPONDE À TAREFA QUE DESEJA REALIZAR: **");
+                System.out.println("**    (1) CONVERTER CARACTERES PARA BINÁRIO                     **");
+                System.out.println("**    (2) CONVERTER UM BINÁRIO PARA CARACTERES                  **");
+                System.out.println("**    (3) SAIR DA APLICAÇÃO                                     **");
+                System.out.print("**    ENTRADA: ");
                 escolha = input.nextInt();
             }while(escolha < 1 || escolha > 3 );
 
