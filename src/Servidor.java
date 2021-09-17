@@ -10,7 +10,6 @@ class Servidor {
         ServerSocket welcomeSocket = new ServerSocket(6789);
 
         while (true) {
-
             Socket connectionSocket = welcomeSocket.accept();
             Thread t = new Thread(new ClienteThread(connectionSocket));
             t.start();

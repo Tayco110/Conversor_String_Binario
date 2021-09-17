@@ -6,33 +6,27 @@ import java.net.Socket;
 public class ClienteThread implements Runnable {
 
     private Socket connectionSocket;
-
-    public ClienteThread(Socket s) {
+    public ClienteThread(Socket s){
         this.connectionSocket = s;
     }
 
-    public void run() {
-        String clientSentence;
-        String escolha;
+    public void run(){
+
+        String clientSentence, escolha;
         BufferedReader inFromClient;
         DataOutputStream outToClient;
 
-        try
-        {
-
+        try {
             inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
             outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 
             clientSentence = inFromClient.readLine();
-
             escolha = inFromClient.readLine();
 
-            if(escolha.equals("1"))
-            {
+            if(escolha.equals("1")){
                 byte[] bytes = clientSentence.getBytes();
                 StringBuilder binario = new StringBuilder();
-                for (byte b1 : bytes)
-                {
+                for (byte b1 : bytes) {
                     int val = b1;
                     for (int i = 0; i < 8; i++)
                     {
@@ -43,30 +37,19 @@ public class ClienteThread implements Runnable {
                 }
                 outToClient.writeBytes(binario.toString() + '\n');
             }
-            else if(escolha.equals("2"))
-            {
-                System.out.println("Converter binário para texto escolhido, digite o código para decodificar");
-                System.out.println();
-                String s = "";
+            else if(escolha.equals("2")){
+                String retorno = "";
                 String[] values = clientSentence.split(" ");
-                System.out.print("O código dizia: '");
                 for(int i=0 ; i<values.length ; i++){
                     char c = (char)Integer.parseInt(values[i], 2);
-                    s = s + c;
-                    System.out.print(c);
+                    retorno += c;
                 }
-                System.out.print("'");
-                System.out.println();
-                outToClient.writeBytes(s + '\n');
+                outToClient.writeBytes(retorno + '\n');
             }
-
-
         }
-        catch (Exception e)
-        {
+        catch (Exception e){
             e.printStackTrace();
         }
     }
-
 }
 
