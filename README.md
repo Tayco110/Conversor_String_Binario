@@ -19,4 +19,4 @@ SERVIDOR INICIOU, ESPERANDO CONEXÃO NA PORTA 6789!
 **    (3) SAIR DA APLICAÇÃO                                     **
 **    ENTRADA:
 ```
-**7.** Por fim, dê entrada em uma opção válida.
+**7.** Por fim, forneça uma entrada válida.
