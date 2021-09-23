@@ -1,4 +1,4 @@
-# Conversor: String para binário e binário para string
+# Conversor: String <--> binário
 ## Como rodar a aplicação:
 
 **1.** Certifique-se que sua máquina possui o necessário para rodar uma aplicação `.java`, como por exemplo o JDK.\
